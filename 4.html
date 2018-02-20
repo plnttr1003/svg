@@ -44,15 +44,18 @@
 		g, path, polygon {
 			transition: 0.5s all ease;
 		}
-		svg:nth-child(1):hover path {
-			fill: #000;
-			stroke-width: 20px;
-			stroke: #fff;
-			stroke-dasharray: 5 20;
+		svg:nth-child(1):hover path,
+		svg:nth-child(1):hover polygon {
+			stroke-width: 4px;
+			stroke: #000;
+			stroke-dasharray: 20 5;
+			fill: #f00;
 		}
-		svg:nth-child(2):hover polygon {
+		svg:nth-child(2):hover polygon,
+		svg:nth-child(2):hover path,
+		svg:nth-child(2):hover rect {
 			stroke: #61a08c;
-			stroke-width: 5px;
+			stroke-width: 8px;
 			stroke-dasharray: 10 2;
 			fill: none;
 			stroke-linecap: round;
@@ -79,9 +82,9 @@
 	<body>
 		<div class="container">
 			<div class="col">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="198.43px" height="198.43px" viewBox="0 0 198.43 198.43" enable-background="new 0 0 198.43 198.43" xml:space="preserve">
+				<!--<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="198.43px" height="198.43px" viewBox="0 0 198.43 198.43" enable-background="new 0 0 198.43 198.43" xml:space="preserve">
 					<path d="M190.463,39.07L99.215,0L7.967,39.07v159.36h57.57V92.444c0-18.846,15.278-34.123,34.123-34.123 c18.846,0,34.123,15.278,34.123,34.123V198.43h56.679V39.07z"></path>
-				</svg>
+				</svg>-->
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="198.43px" height="198.43px" viewBox="0 0 198.43 198.43" enable-background="new 0 0 198.43 198.43" xml:space="preserve">
 					<g>
 						<polygon points="109.32,109.611 85.066,85.357 15.335,126.791 15.335,193.491 183.095,193.491 183.095,154.077"></polygon>
@@ -109,7 +112,7 @@
 				</svg>
 			</div>
 			<div class="col">
-				<img src="4-1.svg">
+				<!--<img src="4-1.svg">-->
 				<img src="4-2.svg">
 				<img src="4-3.svg">
 				<img src="4-4.svg">
