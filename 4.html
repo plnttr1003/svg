@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<style>
+		@keyframes dash {
+			0% {
+				stroke-dashoffset: 1000;
+			}
+			20% {
+				fill: transparent;
+			}
+			40% {
+				fill: orange;
+			}
+			100% {
+				stroke-dashoffset: 0;
+
+			}
+		}
+		html,body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+		svg {
+			width: 100%;
+			display: block;
+		}
+		.col {
+			display: flex;
+			height: 50vh;
+			justify-content: space-around;
+			width: 80vw;
+			margin: 0 auto;
+			align-items: center;
+		}
+		.col > svg,
+		.col > img {
+			display: block;
+		}
+		g, path, polygon {
+			transition: 0.5s all ease;
+		}
+		svg:nth-child(1):hover path {
+			fill: #000;
+			stroke-width: 20px;
+			stroke: #fff;
+			stroke-dasharray: 5 20;
+		}
+		svg:nth-child(2):hover polygon {
+			stroke: #61a08c;
+			stroke-width: 5px;
+			stroke-dasharray: 10 2;
+			fill: none;
+			stroke-linecap: round;
+			stroke-dasharray: 1 19px;
+		}
+		svg:nth-child(3):hover g {
+			transform: rotateZ(360deg) scale3d(0.8,0.8,1);
+			transform-origin: 50%;
+		}
+		svg:nth-child(3):hover path,
+		svg:nth-child(3):hover polygon,
+		svg:nth-child(3):hover rect {
+			fill: #f00;
+		}
+		svg:nth-child(4):hover path {
+			stroke-width: 6px;
+			stroke: orange;
+			fill: transparent;
+			stroke-dasharray: 1000;
+			stroke-dashoffset: 1000;
+			animation: dash 25s forwards linear;
+		}
+	</style>
+	<body>
+		<div class="container">
+			<div class="col">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="198.43px" height="198.43px" viewBox="0 0 198.43 198.43" enable-background="new 0 0 198.43 198.43" xml:space="preserve">
+					<path d="M190.463,39.07L99.215,0L7.967,39.07v159.36h57.57V92.444c0-18.846,15.278-34.123,34.123-34.123 c18.846,0,34.123,15.278,34.123,34.123V198.43h56.679V39.07z"></path>
+				</svg>
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="198.43px" height="198.43px" viewBox="0 0 198.43 198.43" enable-background="new 0 0 198.43 198.43" xml:space="preserve">
+					<g>
+						<polygon points="109.32,109.611 85.066,85.357 15.335,126.791 15.335,193.491 183.095,193.491 183.095,154.077"></polygon>
+						<polygon points="103.978,2.85 94.811,2.85 88.313,81.028 112.567,105.426"></polygon>
+					</g>
+				</svg>
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="198.43px" height="198.43px" viewBox="0 0 198.43 198.43" enable-background="new 0 0 198.43 198.43" xml:space="preserve">
+					<g>
+						<polygon points="23.599,123.665 23.599,135.297 11.966,135.297 11.966,146.933 23.599,146.933 35.231,146.933 35.231,135.297 46.865,135.297 46.865,123.665 35.231,123.665"></polygon>
+						<polygon points="116.664,100.396 116.664,88.764 116.664,77.132 105.032,77.132 105.032,65.498 93.398,65.498 81.765,65.498 81.765,53.864 70.133,53.864 58.499,53.864 46.865,53.864 46.865,65.498 35.231,65.498 23.599,65.498 23.599,77.132 23.599,88.764 11.966,88.764 11.966,100.396 11.966,112.032 23.599,112.032 35.231,112.032 46.865,112.032 46.865,123.665 58.499,123.665 70.133,123.665 81.765,123.665 81.765,112.032 93.398,112.032 105.032,112.032 105.032,123.665 93.398,123.665 93.398,135.297 93.398,146.933 81.765,146.933 81.765,158.565 93.398,158.565 105.032,158.565 105.032,146.933 116.664,146.933 116.664,135.297 116.664,123.665 128.299,123.665 128.299,112.032 116.664,112.032">
+						</polygon>
+						<path d="M186.464,77.132V65.498h-11.632H163.2h-11.636h-11.634v11.634h-11.632v11.632v11.632v11.636h11.632h11.634H163.2h11.632 h11.632v-11.636h11.634V88.764V77.132H186.464z M163.2,77.132h11.632v11.632H163.2h-11.636V77.132H163.2z">
+						</path>
+						<rect x="0.332" y="112.032" width="11.634" height="11.633">
+						</rect>
+					</g>
+				</svg>
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="198.43px" height="198.43px" viewBox="0 0 198.43 198.43" enable-background="new 0 0 198.43 198.43" xml:space="preserve">
+					<g>
+						<g>
+							<path d="M174.843,57.295h-19.086V37.99v-6.482h-21.249H23.585H2.336v6.482v19.305v6.481h21.25h19.086V83.08H23.585H2.336v6.483 v19.306v6.48v0.001h40.336v19.304H23.585H2.336v6.483v19.304v6.48h21.25h110.922h21.249v-6.48v-19.304h40.337v-0.001v-6.482 v-19.304v-6.481h-21.251h-19.086V89.563h40.337v-0.002V83.08V63.776v-6.481H174.843z M18.542,57.295H6.493V37.936h12.05V57.295z M18.542,160.485H6.493v-19.357h12.05V160.485z M179.362,114.927h12.049v19.356h-12.049V114.927z M138.574,37.936h12.052v19.359 h-12.052V37.936z M82.289,37.99h52.219v19.305H82.289V37.99z M82.289,108.869V89.563h52.219v19.306H82.289z M116.142,115.351 v19.304h-52.22v-19.304H116.142z M116.142,83.08h-52.22V63.776h52.22V83.08z M23.585,57.295V37.99h52.22v19.305H63.921h-21.25 H23.585z M59.329,63.327v19.356H47.278V63.327H59.329z M18.542,108.895H6.493V89.537h12.05V108.895z M23.585,108.869V89.563h52.22 v19.306H63.921h-21.25H23.585z M59.329,114.927v19.356H47.278v-19.356H59.329z M75.805,160.441h-52.22v-19.304h52.22V160.441z M134.508,160.441H82.289v-19.304h52.219V160.441z M150.626,160.485h-12.052v-19.357h12.052V160.485z M174.843,115.351v19.304 h-19.086h-21.249h-11.884v-19.304H174.843z M138.574,108.895V89.537h12.052v19.357H138.574z M174.843,83.08h-19.086h-21.249 h-11.884V63.776h11.884h21.249h19.086V83.08z M191.411,82.684h-12.049V63.327h12.049V82.684z">
+							</path>
+						</g>
+					</g>
+				</svg>
+			</div>
+			<div class="col">
+				<img src="4-1.svg">
+				<img src="4-2.svg">
+				<img src="4-3.svg">
+				<img src="4-4.svg">
+			</div>
+		</div>
+	</body>
+</html>
