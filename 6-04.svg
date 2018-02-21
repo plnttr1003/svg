@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="832px"
+	 height="294.5px" viewBox="0 0 832 294.5" enable-background="new 0 0 832 294.5" xml:space="preserve">
+<style>
+	@keyframes dash {
+		from {
+			stroke-dashoffset: 1000;
+		}
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+	@keyframes stroke {
+		0% {
+			stroke-dasharray: 10 30;
+		}
+		50% {
+			stoke-width: 30;
+			stroke-dasharray: 1 1 10;
+		}
+		100% {
+			stroke-dasharray: 10 30;
+		}
+	}
+	@keyframes stroke2 {
+		0% {
+			stroke-dasharray: 10 30;
+		}
+		50% {
+			stoke-width: 30;
+			stroke-dasharray: 1 1 10;
+			stroke: #f00;
+		}
+		100% {
+			stroke-dasharray: 10 30;
+		}
+	}
+	line {
+	 stroke: #1D1D1B;
+	}
+	.l1 {
+		stroke-dasharray: 1 25 1 40 1 80;
+		stroke-width: 19px;
+		stroke: #1D1D1B;
+		stroke-linecap: round;
+		animation: stroke 20s forwards linear;
+		animation-iteration-count: infinite;
+	}
+	.l2 {
+		stroke-dasharray: 10 50 6;
+		stroke-width: 23px;
+		animation: dash 5s forwards linear;
+		animation-iteration-count: infinite;
+	}
+	.l3 {
+		stroke-dasharray: 10 30;
+		stroke-width: 10px;
+		animation: stroke 15s forwards linear;
+		animation-iteration-count: infinite;
+	}
+	.l4 {
+		stroke-dasharray: 10 110 10 30 10 70;
+		stroke-dashoffset: 21;
+		stroke: #fc0;
+		stroke-width: 20;
+		animation: stroke2 30s forwards linear;
+		animation-iteration-count: infinite;
+	}
+</style>
+<g xmlns="http://www.w3.org/2000/svg">
+	<line class="l1" fill="none" stroke-miterlimit="10" x1="42" y1="56" x2="799" y2="56"/>
+	<line class="l2" fill="none" stroke-miterlimit="10" x1="42" y1="138" x2="799" y2="138"/>
+	<line class="l3" fill="none" stroke-miterlimit="10" x1="42" y1="220" x2="799" y2="220"/>
+	<line class="l4" fill="none" stroke-miterlimit="10" x1="42" y1="220" x2="799" y2="220"/>
+</g>
+</svg>
