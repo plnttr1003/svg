@@ -6,22 +6,46 @@
 </head>
 
 <style>
-  path, circle {
-    fill:url('#fill');
+	* {
+		margin:0;
+		padding:0;
+	}
+  path {
+    stroke: #fc0;
+    fill: none;
+    stroke-width: 6px;
   }
 </style>
 <body>
-  <svg>
-    <path d="M50,50a31,31 0 1,0 62,0 a31,31 0 1,0 -62,0 "></path>
-    <circle cx="200" cy="60" r="50" stroke="3"/>
-    <defs>
-      <radialGradient id="fill" gradientUnits="objectBoundingBox" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-        <stop offset="0%" stop-color="#fff"></stop>
-        <stop offset="54%" stop-color="#fff"></stop>
-        <stop offset="80%" stop-color="#67d25c"></stop>
-        <stop offset="100%" stop-color="#f00"></stop>
-      </radialGradient>
-    </defs>
-  </svg>
+  <div class="aaa">start</div>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/snap.svg/0.1.0/snap.svg-min.js"></script>
+  <script>
+    document.querySelectorAll('.aaa')[0].addEventListener('click', animate);
+    let path1 = 'M35.9,60.2c17.3,113.9,822.2,163.9,878.3,74.9';
+    let path2 = 'M35.9,60.2C82-115.4,858.1,224.1,914.1,135.1';
+    let coordinates = path2;
+    let s = Snap(400, 620);
+    let path = s.path(coordinates);
+
+    function animate() {
+      console.log('coords', coordinates);
+      path.animate({ d: coordinates }, 1, mina.bounce);
+      let animationName = Object.keys(path.anims)[Object.keys(path.anims).length - 1];
+      console.log('start',path.anims[animationName].start);
+      var coords = path.anims[animationName].start;
+
+      var x1 = coords[0];
+      var y1 = coords[1];
+      var x2 = coords[2];
+      var y2 = coords[3];
+      var x3 = coords[4];
+      var y3 = coords[5];
+      var x4 = coords[6];
+      var y4 = coords[7];
+      var col = (x2 - x1)*(y4 - y1) - (x4 - y1)*(y2 - y1);
+      col < 0 ? document.querySelector('path').style.stroke = 'blue' : document.querySelector('path').style.stroke = 'red'
+    }
+  </script>
+  </div>
 </body>
 </html>
