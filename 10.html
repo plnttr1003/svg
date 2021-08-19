@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<style>
+	* {
+		margin:0;
+		padding:0;
+	}
+  path {
+    stroke: #fc0;
+    fill: none;
+    stroke-width: 6px;
+  }
+</style>
+<body>
+  <div class="aaa">start</div>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/snap.svg/0.1.0/snap.svg-min.js"></script>
+  <script>
+    document.querySelectorAll('.aaa')[0].addEventListener('click', animate);
+    let path1 = 'M35.9,60.2c17.3,113.9,822.2,163.9,878.3,74.9';
+    let path2 = 'M35.9,60.2C82-115.4,858.1,224.1,914.1,135.1';
+    let coordinates = path1;
+
+    //document.querySelectorAll('.coords')[0].addEventListener('click', getCoords);
+    let s = Snap(400, 620);
+    let path = s.path(coordinates);
+    //M35.9,60.2c17.3,113.9,822.2,163.9,878.3,74.9
+    //M35.9,60.2C82-115.4,858.1,224.1,914.1,135.1
+
+    function animate() {
+        console.log('coords', coordinates);
+        path.animate({ d: coordinates }, 1, mina.bounce);
+        let animationName = Object.keys(path.anims)[Object.keys(path.anims).length - 1];
+        console.log('start',path.anims[animationName].start);
+        var coords = path.anims[animationName].start;
+
+        var x1 = coords[0];
+        var y1 = coords[1];
+        var x2 = coords[2];
+        var y2 = coords[3];
+        var x3 = coords[4];
+        var y3 = coords[5];
+        var x4 = coords[6];
+        var y4 = coords[7];
+
+        var col = (x2 - x1)*(y4 - y1) - (x4 - y1)*(y2 - y1);
+        console.log(path);
+        col < 0 ? document.querySelector('path').style.stroke = 'blue' : document.querySelector('path').style.stroke = 'red'
+    }
+  </script>
+  </div>
+</body>
+</html>
