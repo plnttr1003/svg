@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<style>
+	* {
+		margin:0;
+		padding:0;
+	}
+  path {
+    stroke: #fc0;
+    fill: none;
+    stroke-width: 6px;
+  }
+</style>
+<body>
+  <svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="500" height="500"></svg>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/snap.svg/0.1.0/snap.svg-min.js"></script>
+  <script>
+    var s = Snap("#svg");
+    var block = s.rect(100, 100, 100, 100);
+    function infRotate( el ) {
+        el.transform('r0,150,150');
+        el.animate({ transform: 'r360,150,150' }, 2000, mina.linear, infRotate.bind( null, el));
+    };
+    infRotate( block );
+  </script>
+  </div>
+</body>
+</html>
