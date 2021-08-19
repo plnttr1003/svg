@@ -4,25 +4,30 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
+
 <style>
-  path {
-    fill: #46be5a;
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+      stroke-dasharray: 500;
+    }
+  }
+
+  svg {
+    width: 120px;
+  }
+  circle {
+    fill:transparent;
+    stroke:#0d76ff;
+    stroke-width:3px;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: dash 2s linear forwards;
   }
 </style>
 <body>
-  <svg viewBox="0 0 600 600">
-    <path fill="#000" d="M100,500H0c0,0,0-157.8,0-250C0,135.2,0,0,0,0l100,1c6.6,0,12,5.4,12,12c0,0,0,117.7,0,237c0,108.7,0,238,0,238
-    C112,494.6,106.6,500,100,500z">
-    <animate attributeName="d" dur="4000ms" repeatCount="indefinite" values="
-    M100,500H0c0,0,0-157.8,0-250C0,135.2,0,0,0,0l100,1c6.6,0,12,5.4,12,12c0,0,0,117.7,0,237c0,108.7,0,238,0,238
-    C112,494.6,106.6,500,100,500z;
-    M100,500H0c0,0,0-157.8,0-250C0,135.2,20.6,0,20.6,0l100,13.1c6.6,0,12,5.4,12,12c0,0-20.6,105.6-20.6,224.9
-    c0,108.7,0,238,0,238C112,494.6,106.6,500,100,500z;
-    M100,493.4H0c0,0,0,24.3,0-67.8C0,310.7,40.6,0,40.6,0l100,13.1c6.6,0,12,5.4,12,12c0,0-40.6,281.2-40.6,400.5
-    c0,108.7,0,55.8,0,55.8C112,488,106.6,493.4,100,493.4z;
-    M100,500H0c0,0,0-157.8,0-250C0,135.2,0,0,0,0l100,1c6.6,0,12,5.4,12,12c0,0,0,117.7,0,237c0,108.7,0,238,0,238
-    C112,494.6,106.6,500,100,500z"></animate>
-    </path>
-    </svg>
+  <svg viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="75" cy="75" r="73"/>
+  </svg>
 </body>
 </html>
