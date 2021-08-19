@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<style>
+  use {
+    transform: translate3d(-96.9px,-64.6px, 0);
+  }
+</style>
+<body>
+
+	<svg version="1.1" id="Слой_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 width="1150px" height="724px" viewBox="0 0 1150 724" enable-background="new 0 0 1150 724" xml:space="preserve">
+	<g id="sector1">
+		<g id="row1">
+			<path id="path1-10" fill="none" stroke="#1D1D1B" stroke-miterlimit="10" d="M345.1,606.5c142.5-105.8,293.8-125.1,459.8,0"/>
+		</g>
+		<g id="row2">
+			<path id="path11-15" fill="none" stroke="#1D1D1B" stroke-width="1.0805" stroke-miterlimit="10" d="M299.2,562.7
+				c85-65.1,176.1-103.6,269.1-105.2c90.4-1.6,189.1,33.8,282.5,105.2"/>
+		</g>
+		<g id="row3">
+			<path id="path16-30" fill="none" stroke="#1D1D1B" stroke-width="1.1609" stroke-miterlimit="10" d="M253.3,518.8
+				c97.7-76.5,205.5-122.1,314.1-123.7c105.5-1.6,224.4,42.6,329.4,123.7"/>
+		</g>
+		<g id="row4">
+			<path id="path30-42" fill="none" stroke="#1D1D1B" stroke-width="1.2414" stroke-miterlimit="10" d="M207.4,475
+				c110.5-87.9,234.9-140.6,359-142.2c120.5-1.5,259.8,51.4,376.3,142.2"/>
+		</g>
+		<g id="row5">
+			<path id="path43-60" fill="none" stroke="#1D1D1B" stroke-width="1.3219" stroke-miterlimit="10" d="M161.4,431.2
+				c123.2-99.3,264.3-159.1,403.9-160.7c135.5-1.5,295.2,60.2,423.2,160.7"/>
+		</g>
+		<g id="row6">
+			<path id="path61-76" fill="none" stroke="#1D1D1B" stroke-width="1.4023" stroke-miterlimit="10" d="M115.5,387.3
+				c136-110.7,293.7-177.6,448.9-179.2c150.5-1.5,330.5,69,470.1,179.2"/>
+		</g>
+		<g id="row7">
+			<path id="path77-95" fill="none" stroke="#1D1D1B" stroke-width="1.4828" stroke-miterlimit="10" d="M69.6,343.5
+				c148.7-122.1,323.1-196.1,493.8-197.7c165.6-1.5,365.9,77.8,517,197.7"/>
+		</g>
+	</g>
+	<circle id="circle" fill="#FFDE00" stroke="#1D1D1B" stroke-width="3" stroke-miterlimit="10" cx="96.9" cy="64.6" r="18.8"/>
+	</svg>
+  <script>
+function init() {
+	var dc = document,
+			svg = dc.querySelectorAll('svg')[0],
+			path = dc.querySelectorAll('path'),
+			dur = 20;
+
+	path.forEach(function(item){
+		console.log(item);
+		var borderPlaces = item.getAttribute('id').replace('path','').split('-'),
+				borderCount = borderPlaces[1] - borderPlaces[0],
+				row = item.parentNode,
+				rowNum = row.getAttribute('id').replace('row', ''),
+				sectorId = row.parentNode.getAttribute('id');
+
+		for (i = borderPlaces[0]; i <= borderPlaces[1]; i++) {
+			var	use = dc.createElementNS('http://www.w3.org/2000/svg', 'use'),
+					animateMotion = dc.createElementNS('http://www.w3.org/2000/svg', 'animateMotion'),
+					mpath = dc.createElementNS('http://www.w3.org/2000/svg', 'mpath');
+
+			use.setAttributeNS('http://www.w3.org/1999/xlink','href','#circle');
+			use.setAttribute('id', rowNum + '_' + i);
+			use.dataset.row = rowNum;
+			use.dataset.place = i;
+			use.dataset.sector = sectorId;
+
+			//animateMotion.setAttribute('dur', (borderCount / 10) +'s');
+			animateMotion.setAttribute('begin', (i - borderPlaces[0]) / 10 +'s');
+			animateMotion.setAttribute('repeatCount','0');
+
+			//borderCount - (i - borderPlaces[0]))/ borderCount -- обратная нумерация рядов
+			animateMotion.setAttribute('keyPoints',(i - borderPlaces[0])/ borderCount + ';' + (i - borderPlaces[0])/ borderCount);
+			animateMotion.setAttribute('keyTimes','0;1');
+			animateMotion.setAttribute('calcMode','linear');
+			animateMotion.setAttribute('rotate','auto-reverse');
+			//animateMotion.setAttribute('fill','freeze')
+			mpath.setAttributeNS('http://www.w3.org/1999/xlink','href', '#' + item.getAttribute('id'));
+
+			animateMotion.appendChild(mpath);
+			use.appendChild(animateMotion);
+			row.appendChild(use);
+
+			use.addEventListener('click',function(){
+				console.log('sector: ' + this.dataset.sector + ' | row: ' + this.dataset.row  + ' | place: ' + this.dataset.place + ' | x: ' + this.getBoundingClientRect().top + ' | y: ' + this.getBoundingClientRect().left);
+			})
+		}
+	})
+}
+
+(function ready(fn) {
+  if (document.readyState != 'loading'){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+})(init)
+  </script>
+</body>
+</html>
